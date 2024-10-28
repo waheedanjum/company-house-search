@@ -1,0 +1,32 @@
+<div>
+  <!-- Search Input and Button -->
+  <input [(ngModel)]="searchTerm" placeholder="Company Name or Number" />
+  <button (click)="searchCompanies()">Search</button>
+
+  <!-- Display a Loading Indicator -->
+  <div *ngIf="loading$ | async">
+    <p>Loading...</p>
+  </div>
+
+  <!-- Display Search Results -->
+  <div *ngIf="searchResults$ | async as searchResults">
+    <h2>Search Results</h2>
+
+    <!-- Display a Message if No Results are Found -->
+    <p *ngIf="!searchResults.items || searchResults.items.length === 0">No results found.</p>
+
+    <!-- Iterate Over Search Results and Display Each Company -->
+    <ul>
+      <li *ngFor="let company of searchResults.items">
+        <strong>{{ company.title }}</strong> - {{ company.company_number }}
+        <p>{{ company.address_snippet }}</p>
+        <p>Incorporated on {{ company.date_of_creation | date: 'd MMMM y' }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Display Error Message -->
+  <div *ngIf="error$ | async as error">
+    <p>Error: {{ error.message || 'Failed to load search results.' }}</p>
+  </div>
+</div>

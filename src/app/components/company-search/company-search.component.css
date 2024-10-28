@@ -1,0 +1,17 @@
+/* company-search.component.css */
+
+/* Make the container take full viewport height */
+.container {
+  height: 100vh;
+}
+
+/* Style for the input and button to make them larger and centered */
+input.form-control {
+  font-size: 1.5rem; /* Make the input text larger */
+  padding: 20px; /* Increase padding for the input */
+}
+
+button.btn-lg {
+  font-size: 1.5rem; /* Make the button text larger */
+  padding: 15px 30px; /* Add padding to the button */
+}
