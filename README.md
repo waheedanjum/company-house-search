@@ -1,27 +1,74 @@
-# Search
+# Company Search Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+This is a simple Angular application for searching and viewing company details and officers. It uses a backend proxy server to handle API requests to a company information service.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Before running this project, ensure you have the following installed:
 
-## Code scaffolding
+**Node.js (v18 or later)**
+**Angular CLI (v17.3.6 or later)**
+**npm (Node Package Manager)**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
+Follow the steps below to set up and run the project:
+**1. Clone the Repository**
 
-## Build
+git clone <repository-url>
+cd company-searchin
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**2. Install Dependencies**
+Run the following command to install the necessary npm packages:
+npm install
 
-## Running unit tests
+**3. Running the Application**
+The application consists of two parts:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular frontend
+Backend proxy server
 
-## Running end-to-end tests
+You can start both the Angular application and the backend proxy server concurrently using the following command:
+npm start
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This will:
 
-## Further help
+Start the backend proxy server on http://localhost:4000
+Serve the Angular application on http://localhost:4200
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**4. Running Unit Tests**
+To execute the unit tests using Karma, run:
+
+npm test
+
+**Proxy Server**
+The backend proxy server is used to forward API requests to a company information service. It is located in the backend-proxy/server.js file.
+
+You can customize the API URL and headers by modifying the CompanyService located at src/app/services/company.service.ts.
+
+The backend proxy runs on http://localhost:4000.
+
+**API Endpoints**
+The available API endpoints are:
+
+Search for companies: /api/TruProxyAPI/rest/Companies/v1/Search?Query={search_term}
+Get company officers: /api/TruProxyAPI/rest/Companies/v1/Officers?CompanyNumber={company_number}
+
+**Project Structure**
+.
+├── backend-proxy/         # Proxy server for forwarding API requests
+├── src/                   # Angular application source code
+│   ├── app/               # Main application folder
+│   │   ├── components/    # Components (search, details, etc.)
+│   │   ├── models/        # Data models for the app
+│   │   ├── services/      # API services
+│   │   ├── store/         # NgRx store for state management
+│   └── assets/            # Static assets
+├── angular.json           # Angular CLI configuration
+├── package.json           # Project dependencies and scripts
+└── README.md              # Documentation
+
+**Customizing the Project**
+src/app/services/company.service.ts
+
+**License**
+This project is licensed under the MIT License.
