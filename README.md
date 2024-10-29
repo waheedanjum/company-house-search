@@ -47,18 +47,16 @@ You can customize the API URL and headers by modifying the CompanyService locate
 
 The backend proxy runs on http://localhost:4000.
 
-# API Endpoints
+### API Endpoints
 The available API endpoints are:
 
 Search for companies: /api/TruProxyAPI/rest/Companies/v1/Search?Query={search_term}
 Get company officers: /api/TruProxyAPI/rest/Companies/v1/Officers?CompanyNumber={company_number}
 
-**Project Structure**
-![alt text](image.png)
 
-# Customizing the Project
+### Customizing the Project
 
 src/app/services/company.service.ts
 
-**License**
+### License
 This project is licensed under the MIT License.
