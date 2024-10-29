@@ -47,27 +47,17 @@ You can customize the API URL and headers by modifying the CompanyService locate
 
 The backend proxy runs on http://localhost:4000.
 
-**API Endpoints**
+# API Endpoints
 The available API endpoints are:
 
 Search for companies: /api/TruProxyAPI/rest/Companies/v1/Search?Query={search_term}
 Get company officers: /api/TruProxyAPI/rest/Companies/v1/Officers?CompanyNumber={company_number}
 
 **Project Structure**
-.
-├── backend-proxy/         # Proxy server for forwarding API requests
-├── src/                   # Angular application source code
-│   ├── app/               # Main application folder
-│   │   ├── components/    # Components (search, details, etc.)
-│   │   ├── models/        # Data models for the app
-│   │   ├── services/      # API services
-│   │   ├── store/         # NgRx store for state management
-│   └── assets/            # Static assets
-├── angular.json           # Angular CLI configuration
-├── package.json           # Project dependencies and scripts
-└── README.md              # Documentation
+![alt text](image.png)
 
-**Customizing the Project**
+# Customizing the Project
+
 src/app/services/company.service.ts
 
 **License**
