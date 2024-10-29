@@ -49,8 +49,8 @@ The backend proxy runs on http://localhost:4000.
 
 ### 5. API Endpoints
 
-**Search for companies:** /api/TruProxyAPI/rest/Companies/v1/Search?Query={search_term}
-**Get company officers:** /api/TruProxyAPI/rest/Companies/v1/Officers?CompanyNumber={company_number}
+### **Search for companies:** /api/TruProxyAPI/rest/Companies/v1/Search?Query={search_term}
+### **Get company officers:** /api/TruProxyAPI/rest/Companies/v1/Officers?CompanyNumber={company_number}
 
 
 ### 6. Customizing the Project
