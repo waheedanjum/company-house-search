@@ -12,30 +12,30 @@ Before running this project, ensure you have the following installed:
 
 ## Getting Started
 Follow the steps below to set up and run the project:
-**1. Clone the Repository**
+### 1. Clone the Repository**
 
 git clone <repository-url>
 cd company-searchin
 
-**2. Install Dependencies**
+### 2. Install Dependencies**
 Run the following command to install the necessary npm packages:
 npm install
 
-**3. Running the Application**
+### 3. Running the Application**
 The application consists of two parts:
 
-Angular frontend
-Backend proxy server
+**Angular frontend**
+**Backend proxy server**
 
 You can start both the Angular application and the backend proxy server concurrently using the following command:
 npm start
 
 This will:
 
-Start the backend proxy server on http://localhost:4000
-Serve the Angular application on http://localhost:4200
+**Start the backend proxy server on http://localhost:4000**
+**Serve the Angular application on http://localhost:4200**
 
-**4. Running Unit Tests**
+### 4. Running Unit Tests**
 To execute the unit tests using Karma, run:
 
 npm test
@@ -47,16 +47,16 @@ You can customize the API URL and headers by modifying the CompanyService locate
 
 The backend proxy runs on http://localhost:4000.
 
-### API Endpoints
+### 5. API Endpoints
 The available API endpoints are:
 
 Search for companies: /api/TruProxyAPI/rest/Companies/v1/Search?Query={search_term}
 Get company officers: /api/TruProxyAPI/rest/Companies/v1/Officers?CompanyNumber={company_number}
 
 
-### Customizing the Project
+### 6. Customizing the Project
 
 src/app/services/company.service.ts
 
-### License
+### 7. License
 This project is licensed under the MIT License.
