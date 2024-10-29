@@ -1,0 +1,36 @@
+.company-details {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 70%;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.company-number {
+  font-weight: bold;
+  color: #000;
+}
+
+a.text-primary {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a.text-primary:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 10px;
+  color: #333;
+}

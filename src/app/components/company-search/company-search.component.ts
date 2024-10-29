@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { CompanySearch } from '../../models/company-search';
 import { CompanyState } from '../../store/company.reducer';
 import { searchCompanies } from '../../store/company.actions';
+import { Company } from '../../models/company'; // Import the Company model
+import { Router } from '@angular/router';
+import { CompanyDataService } from '../../services/company-data.service';
 
 @Component({
   selector: 'app-company-search',
@@ -11,23 +14,35 @@ import { searchCompanies } from '../../store/company.actions';
   styleUrls: ['./company-search.component.css']
 })
 export class CompanySearchComponent {
-  searchTerm: string = ''; // For the input field
-  searchResults$: Observable<CompanySearch | null>; // Observable for search results
-  loading$: Observable<boolean>; // Observable for loading state
-  error$: Observable<any>; // Observable for error state
-  searchInitiated: boolean = false; // Track if search has started
 
-  constructor(private store: Store<{ company: CompanyState }>) {
+  searchTerm: string = '';
+  searchResults$: Observable<CompanySearch | null>;
+  loading$: Observable<boolean>;
+  error$: Observable<any>;
+  searchInitiated: boolean = false;
+
+  selectedCompany?: Company;
+
+  constructor(
+    private store: Store<{ company: CompanyState }>,
+    private router: Router,
+    private companyDataService: CompanyDataService
+  ) {
     this.searchResults$ = this.store.select(state => state.company.searchResults);
     this.loading$ = this.store.select(state => state.company.loading);
     this.error$ = this.store.select(state => state.company.error);
   }
 
-  // Dispatch the search action when the user clicks "Search"
   searchCompanies() {
     if (this.searchTerm) {
       this.store.dispatch(searchCompanies({ searchTerm: this.searchTerm }));
       this.searchInitiated = true;
     }
   }
+
+  // handle company selection and navigate
+  selectCompany(company: Company) {
+      this.companyDataService.setCompany(company);
+      this.router.navigate(['/company', company.company_number]);
+    }
 }

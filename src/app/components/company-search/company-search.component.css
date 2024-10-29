@@ -1,17 +1,19 @@
-/* company-search.component.css */
 
-/* Make the container take full viewport height */
-.container {
-  height: 100vh;
+#search {
+  margin-top: 100px;
+  width: 50%;
+  margin-left: 20%;
 }
 
-/* Style for the input and button to make them larger and centered */
 input.form-control {
-  font-size: 1.5rem; /* Make the input text larger */
-  padding: 20px; /* Increase padding for the input */
+  font-size: 1.5rem;
+  padding: 20px;
 }
 
-button.btn-lg {
-  font-size: 1.5rem; /* Make the button text larger */
-  padding: 15px 30px; /* Add padding to the button */
+button {
+  margin-left: 40%;
+}
+
+ul {
+  margin-bottom: 15px;
 }

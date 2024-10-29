@@ -1,15 +1,6 @@
-export interface CompanySearch {
-  items: CompanySearchItem[];
-  total_results: number;
-}
+import { Company } from "./company";
 
-export interface CompanySearchItem {
-  company_number: string;
-  title: string;
-  address_snippet: string;
-  date_of_creation: string;
-  company_status: string;
-  links: {
-    self: string;
-  };
+export interface CompanySearch {
+  items: Company[];
+  total_results: number;
 }

@@ -11,15 +11,19 @@ import { CompanyEffects } from './store/company.effects';
 import { CompanyService } from './services/company.service';
 import { CompanySearchComponent } from './components/company-search/company-search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CompanyDetailsComponent } from './components/company-details/company-details.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanySearchComponent
+    CompanySearchComponent,
+    CompanyDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule  ,
     FormsModule,
     HttpClientModule ,
     StoreModule.forRoot({company: companyReducer}, {}),

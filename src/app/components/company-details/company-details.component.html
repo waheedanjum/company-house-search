@@ -1,0 +1,27 @@
+<div *ngIf="company" class="company-details">
+  <h1>{{ company.title }}</h1>
+
+  <p>
+    Company number <span class="company-number">{{ company.company_number }}</span>
+ </p>
+ <br />
+
+  <p>Registered office address <br />
+    <strong>{{ company.address_snippet }}</strong>
+  </p>
+
+  <p>Company status<br />
+    <strong>{{ company.company_status }}</strong>
+  </p>
+
+  <p>Company type <br/>
+  <strong>{{ company.company_type  }}</strong></p>
+
+  <p>Incorporated on<br />
+  <strong>{{ company.date_of_creation | date: 'd MMMM y' }}</strong></p>
+
+  <!-- List Officers Link -->
+  <a [routerLink]="['/company', company.company_number, 'officers']" class="text-primary">
+    <strong>List Officers</strong>
+  </a>
+</div>

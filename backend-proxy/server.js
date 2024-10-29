@@ -1,6 +1,5 @@
-// server.js
-const express = require('express'); // Use require instead of import
-const request = require('request'); // Use require instead of import
+const express = require('express');
+const request = require('request');
 
 const app = express();
 const port = 4000;
@@ -13,7 +12,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Route to handle API requests and forward them to the target server
+// handle API requests and forward them to the target server
 app.get('/api/*', (req, res) => {
   const apiUrl = `https://angular-exercise.trunarrative.cloud${req.originalUrl.replace('/api', '')}`;
   const apiKey = req.headers['x-api-key'];
