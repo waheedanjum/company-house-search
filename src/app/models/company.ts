@@ -1,6 +1,5 @@
 import { Address } from "./Address";
 
-
 export interface Company {
   company_status: string;
   address_snippet: string;

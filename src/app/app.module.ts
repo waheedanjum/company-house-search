@@ -13,12 +13,14 @@ import { CompanySearchComponent } from './components/company-search/company-sear
 import { HttpClientModule } from '@angular/common/http';
 import { CompanyDetailsComponent } from './components/company-details/company-details.component';
 import { RouterModule } from '@angular/router';
+import { CompanyOfficersComponent } from './components/company-officers/company-officers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanySearchComponent,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    CompanyOfficersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Company } from '../../models/company';
-import { CompanyDataService } from '../../services/company-data.service'; // Import the shared service
+import { CompanyDataService } from '../../services/company-data.service';
 
 @Component({
   selector: 'app-company-details',
@@ -13,7 +13,7 @@ export class CompanyDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private companyDataService: CompanyDataService // Inject the shared service
+    private companyDataService: CompanyDataService
   ) {}
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class CompanyDetailsComponent implements OnInit {
     const selectedCompany = this.companyDataService.getCompany();
 
     if (selectedCompany) {
-      // Create a copy of the company object to safely modify it
+      // Create a copy of the company object to modify it
       this.company = { ...selectedCompany };
 
       this.company.company_type.toLocaleLowerCase() === "ltd" ?
@@ -34,9 +34,9 @@ export class CompanyDetailsComponent implements OnInit {
       this.company.company_status.toLocaleLowerCase() === "dissolved" ?
         this.company.company_status = "Dissolved": this.company.company_status;
 
-    } else {
+        console.log("Company :", this.company)
 
-      console.error('No company data available.');
     }
+
   }
 }

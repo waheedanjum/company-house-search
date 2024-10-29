@@ -1,10 +1,10 @@
-<div *ngIf="company" class="company-details">
+<div *ngIf="company; else noData" class="company-details">
   <h1>{{ company.title }}</h1>
 
   <p>
     Company number <span class="company-number">{{ company.company_number }}</span>
- </p>
- <br />
+  </p>
+  <br />
 
   <p>Registered office address <br />
     <strong>{{ company.address_snippet }}</strong>
@@ -14,14 +14,22 @@
     <strong>{{ company.company_status }}</strong>
   </p>
 
-  <p>Company type <br/>
-  <strong>{{ company.company_type  }}</strong></p>
+  <p>Company type <br />
+    <strong>{{ company.company_type }}</strong>
+  </p>
 
   <p>Incorporated on<br />
-  <strong>{{ company.date_of_creation | date: 'd MMMM y' }}</strong></p>
+    <strong>{{ company.date_of_creation | date: 'd MMMM y' }}</strong>
+  </p>
+  <br />
 
-  <!-- List Officers Link -->
-  <a [routerLink]="['/company', company.company_number, 'officers']" class="text-primary">
+  <!-- List Officers -->
+  <a [routerLink]="['/company', company.company_number, 'officers']" [queryParams]="{ title: company.title }"
+    class="text-primary">
     <strong>List Officers</strong>
   </a>
 </div>
+
+<ng-template #noData>
+  <p>No company data available.</p>
+</ng-template>

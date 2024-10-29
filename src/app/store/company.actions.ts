@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { CompanyOfficer } from '../models/company-officer';
 import { CompanySearch } from '../models/company-search';
+import { OfficerResponse } from '../models/officer';
 
 // Action for loading company officers
 export const loadCompanyOfficers = createAction(
@@ -9,15 +10,14 @@ export const loadCompanyOfficers = createAction(
 );
 
 export const loadCompanyOfficersSuccess = createAction(
-  '[Company] Load Officers Success',
-  props<{ officers: CompanyOfficer }>()
+  '[Company] Load Company Officers Success',
+  props<{ officers: OfficerResponse }>()
 );
 
 export const loadCompanyOfficersFailure = createAction(
   '[Company] Load Officers Failure',
   props<{ error: any }>()
 );
-
 
 
 export const searchCompanies = createAction(

@@ -1,0 +1,20 @@
+<div *ngIf="officers$ | async as officers" class="company-officers">
+  <h1>{{ companyTitle }} - Officers</h1>
+  <p>Company number <strong>{{ companyNumber }}</strong></p>
+
+  <!-- Iterate over the list of officers -->
+  <ul class="officers-list">
+    <li *ngFor="let officer of officers.items" class="officer">
+      <strong>{{ officer.name }}</strong>
+      <p>{{ officer.officer_role }}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="loading$ | async">
+  <p>Loading officers...</p>
+</div>
+
+<div *ngIf="error$ | async as error">
+  <p class="text-danger">Error: {{ error.message || 'Failed to load officers' }}</p>
+</div>

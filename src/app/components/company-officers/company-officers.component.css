@@ -1,0 +1,27 @@
+.company-officers {
+  margin: 20px;
+}
+
+.company-officers h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.officers-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.officer {
+  margin-bottom: 15px;
+}
+
+.officer strong {
+  font-size: 18px;
+}
+
+.officer p {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}

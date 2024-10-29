@@ -40,7 +40,6 @@ export class CompanySearchComponent {
     }
   }
 
-  // handle company selection and navigate
   selectCompany(company: Company) {
       this.companyDataService.setCompany(company);
       this.router.navigate(['/company', company.company_number]);
